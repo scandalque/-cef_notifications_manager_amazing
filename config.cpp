@@ -38,6 +38,8 @@ void c_config::save_settings_to_ini() {
 			{ {"fullscreen", "error"}, false },
 
 			{ {"centered", "hint"}, false },
+			{ {"centered", "error"}, false },
+			{ {"centered", "congratulate"}, false },
 		};
 	}
 
