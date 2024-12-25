@@ -115,7 +115,9 @@ std::optional<HRESULT> CALLBACK c_plugin::present(const decltype(present_hook)& 
                     ImGui::Text(current_first_key.c_str());
                 }
                 std::string name = _config.first.second + "##" + _config.first.first + "_" + _config.first.second;
-                ImGui::Checkbox((name.c_str()), &config_p->config[{_config.first.first, _config.first.second}]);
+                if (ImGui::Checkbox((name.c_str()), &config_p->config[{_config.first.first, _config.first.second}])) {
+                    config_p->save_settings_to_ini();
+                }
             }
             ImGui::SetCursorPos(ImVec2(295, 375));
 
